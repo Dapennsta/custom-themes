@@ -1,0 +1,292 @@
+/*
+Theme Name: 	Starkers
+Theme URI: 		http://viewportindustries.com/products/starkers
+Description: 	The totally nude Wordpress theme!
+Version: 		4.0
+Author: 		Elliot Jay Stocks & Keir Whitaker
+Author URI: 	http://viewportindustries.com
+Tags: 			starkers, naked, clean, basic
+*/
+
+/*
+===========================
+CONTENTS:
+
+01 Sensible defaults
+02 Typography
+03 Media queries 
+===========================
+*/
+
+/* ---------------------------------------------------------------------------------------------------------- 
+01 Sensible defaults ----------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+
+@import "css/reset.css";
+
+div,
+article,
+section,
+header,
+footer,
+nav,
+li					{ position:relative; /* For absolutely positioning elements within containers (add more to the list if need be) */ }
+.group:after 		{ display:block; height:0; clear:both; content:"."; visibility:hidden; /* For clearing */ }
+body 				{ background:#fff; font-family: Helvetica, Arial, san-serif; font-size: 18px;  /* Don't forget to style your body to avoid user overrides */ }
+::-moz-selection 	{ background:#ff0; color:#333; }
+::selection 		{ background:#ff0; color:#333; }
+
+/* ---------------------------------------------------------------------------------------------------------- 
+02 Typography -----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+/*
+
+14 / 16	= 		0.875em 		(14px equivalent)
+16 / 16	= 		1em 			(16px equivalent)
+18 / 16 = 		1.125em 		(18px equivalent)
+21 / 16 = 		1.3125em 		(21px equivalent)
+24 / 16 = 		1.5em 			(24px equivalent)
+30 / 16 = 		1.875em 		(30px equivalent)
+
+*/
+
+body,
+input,
+textarea 			{ /* We strongly recommend you declare font-weight using numerical values, but check to see which weights you're exporting first */ }
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 					{ font-weight:bold; /* This helps to identify headings at the initial build stage, but you should write something more precise later on */ }
+
+/* Master element containing the whole document
+   starting in header and ending in footer */
+#master {
+	width: 1020px;
+	margin: 0 auto;
+	border-left: 1px solid rgb(150,150,150);  /* Wire Framework */
+	border-right: 1px solid rgb(150,150,150);
+}
+
+/* Heading at top containg logo and menu */
+header {
+	background: rgb(0,0,0);
+	height: 60px;
+	padding: 5px 40px 10px 40px;
+}
+
+	/* Logo on left side of header */
+	#logo {
+		width: 200px;
+		height: 50px;
+		float: left;
+		margin-top: 12px;
+	}
+
+	/* Menu items in header containing pages
+	   listed and linked items selected */
+	.menu {
+		float: right;
+		margin-top: 22px;
+		font-weight: bold;
+	}
+	.menu li {
+		float: left;
+		list-style-type: none;
+		margin-right: 30px;
+	}
+	.menu li a {
+		text-decoration: none;
+		color: rgb(255,255,255);
+	}
+
+	/* Call to action button on right side of header */
+	.button {
+		float: right;
+		background: rgb(220,220,220);
+		width: 150px;
+		height: 38px;
+		border-radius: 5px;
+		padding: 7px 5px;
+		margin: 5px 5px 0 0;
+		border: 1px solid rgb(205,101,14);
+		cursor: pointer;
+		background: linear-gradient( rgb(245,143,61), rgb(205,101,15) );
+		box-shadow: 0px 3px 12px rgba(0,0,0,.5), 
+					0px 2px 0px rgb(185,91,12),
+					inset 0px 2px 0px rgba(255,255,255,.5);
+	}
+	.button:hover {
+		background: linear-gradient( rgb(205,101,15), rgb(245,143,61) );
+	}
+
+/* Hero element at top of page, the showcase */
+#hero {
+	height: 335px;
+	background: url(http://localhost/wordpress/images/DavidLeoVeksler.jpg);
+	padding-top: 20px;
+	padding-bottom: 35px; 
+	color: rgb(255,255,255);
+}
+
+	/* Main graphic in hero element */	
+	.heroipad {
+		width: 460px;
+		height: 360px;
+		margin-left: 40px;
+		float: left;
+	}
+
+	/* Text in the hero element */
+	.herotext {
+		width: 430px;
+		height: 360px;
+		float: right;
+		margin-right: 20px;
+	}
+
+	.herotext h1 {
+		font-size: 55px;
+		font-family: 'Oleo Script Swash Caps', cursive;
+		line-height: 1em;
+		margin-bottom: 20px;
+		text-shadow: 2px 2px 5px rgba(0,0,0,.5);
+	}
+	.herotext p {
+		margin-bottom: 50px;
+	}
+	.herotext .button {
+		width: 225px;
+		height: 45px;
+		float: left;
+		font-size: 30px;
+		font-style: bold;
+		padding-top: 20px;
+		text-align: center;
+		text-shadow: 0 -2px rgba(0,0,0,.25);
+	}
+
+#introducing {
+	height: 310px;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px
+}
+	#introducing h1 {
+		font-size: 45px;
+		font-family: 'Oleo Script Swash Caps', cursive;
+		color: rgb(113,80,109);
+	}
+	#introducing p {
+		margin-bottom: 30px;
+		color: rgb(180,180,180);
+	}
+	#introducing h2 {
+		font-size: 30px;
+		font-family: 'Oleo Script Swash Caps', cursive;
+		color: rgb(113,80,109);
+	}
+	.introbox1 {
+		float: left;
+		width: 300px;
+		height: 200px;
+		margin-left: 40px;
+	}
+	.introbox2 {  /* ALSO WORKS FOR INTROBOX3 */
+		float: left;
+		width: 300px;
+		height: 200px;
+		margin-left: 20px;
+	}
+
+/* Article elements containing posts */
+#siteloop {
+	padding-top: 20px;
+	float: left;
+	width: 800px;
+}
+	#siteloop article {
+		padding-bottom:30px;
+		padding-left: 10px;
+		padding-right: 10px;
+		color: rgb(180,180,180);
+	}
+	#siteloop article h2 a {
+		text-decoration: none;
+		font-size: 30px;
+		font-family: 'Oleo Script Swash Caps', cursive;
+	}
+	#siteloop .more-link {
+		font-size: 15px;
+	}
+
+#sidebar {
+	float: right;
+	width: 210px;
+}
+#sidebar h2 {
+	font-size: 25px;
+    font-family: 'Oleo Script Swash Caps', cursive;
+	color: rgb(113,80,109);
+}
+#sidebar #s {
+	width: 190px;
+	margin-bottom: 10px;
+}
+
+#getitnow {
+	background: rgb(113,80,109);
+	height: 75px;
+	padding: 10px 40px 0px 40px;
+	clear: both;
+}
+	#getitnow h1 {
+		font-size: 45px;
+		float: left;
+		font-family: 'Oleo Script Swash Caps', cursive;
+		color: rgb(255,255,255);
+	}
+	#getitnow .button {  }
+
+footer {
+	height: 40px;
+	padding-top: 10px;
+	text-align: center;
+	font-size: 14px;
+}
+	footer li {
+		list-style-type: none;
+		margin-right: 30px;
+		display: inline-block;
+	}
+	footer li a {
+		font-weight: bold;
+		text-decoration: none;
+	}
+
+.line-separator {
+	height: 1px;
+	background: #717171;
+	border-bottom: 1px solid #313030;
+	box-shadow: 0px 0px 6px rgba(130,130,130,1);
+}
+
+/* ---------------------------------------------------------------------------------------------------------- 
+03 Media queries (using a mobile-first approach) ------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+
+/* 400 and up */
+@media screen and (min-width:400px) {
+
+					{ /* Place your styles here for all widths greater than 400px */ }
+
+}
+
+/* Retina Display */
+@media screen and (-webkit-min-device-pixel-ratio:2) {
+
+					{ /* Place your styles here for all 'Retina' screens */ }
+
+}

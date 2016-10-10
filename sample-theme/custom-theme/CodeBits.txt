@@ -1,0 +1,52 @@
+Hero Text:
+
+<h1>Share your<br>beautiful designs</h1>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor </p>
+
+<div class="button"></div>
+
+
+
+Introducing Boxes:
+
+<div class="IntroBox1"><h2>Loaded with features!</h2></div>
+
+<div class="IntroBox2"><h2>Easy to use!</h2></div>
+
+<div class="IntroBox3"><h2>Mix, sort, and share!</h2></div>
+
+
+
+Sidebar, for functions.php:
+
+if ( function_exists('register_sidebars') )
+register_sidebars(1);
+
+
+
+Sidebar, for index.php:
+
+<?php include (TEMPLATEPATH . '/sidebar.php'); ?>
+
+
+
+Sidebar, for sidebar.php:
+
+<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+<?php dynamic_sidebar( 'sidebar-1' ); ?>
+</div>
+<?php endif; ?>
+
+
+
+Basic Pagination:
+
+<div class="navigation"><p><?php posts_nav_link(); ?></p></div>
+
+
+
+WP-Paginate Code:
+
+<?php if(function_exists('wp_paginate')) { wp_paginate(); } ?>

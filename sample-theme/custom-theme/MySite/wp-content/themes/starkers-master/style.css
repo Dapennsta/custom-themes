@@ -1,0 +1,123 @@
+/*
+Theme Name: 	Starkers
+Theme URI: 		http://viewportindustries.com/products/starkers
+Description: 	The totally nude Wordpress theme!
+Version: 		4.0
+Author: 		Elliot Jay Stocks & Keir Whitaker
+Author URI: 	http://viewportindustries.com
+Tags: 			starkers, naked, clean, basic
+*/
+
+/*
+===========================
+CONTENTS:
+
+01 Sensible defaults
+02 Typography
+03 Media queries 
+===========================
+*/
+
+/* ---------------------------------------------------------------------------------------------------------- 
+01 Sensible defaults ----------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+
+@import "css/reset.css";
+
+div,
+article,
+section,
+header,
+footer,
+nav,
+li					{ position:relative; /* For absolutely positioning elements within containers (add more to the list if need be) */ }
+.group:after 		{ display:block; height:0; clear:both; content:"."; visibility:hidden; /* For clearing */ }
+body 				{ background:#fff; font-family: Helvetica, Arial, san-serif; font-size: 18px; /* Don't forget to style your body to avoid user overrides */ }
+::-moz-selection 	{ background:#ff0; color:#333; }
+::selection 		{ background:#ff0; color:#333; }
+
+/* ---------------------------------------------------------------------------------------------------------- 
+02 Typography -----------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+/*
+
+14 / 16	= 		0.875em 		(14px equivalent)
+16 / 16	= 		1em 			(16px equivalent)
+18 / 16 = 		1.125em 		(18px equivalent)
+21 / 16 = 		1.3125em 		(21px equivalent)
+24 / 16 = 		1.5em 			(24px equivalent)
+30 / 16 = 		1.875em 		(30px equivalent)
+
+*/
+
+body,
+input,
+textarea 			{ /* We strongly recommend you declare font-weight using numerical values, but check to see which weights you're exporting first */ }
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 					{ font-weight:bold; /* This helps to identify headings at the initial build stage, but you should write something more precise later on */ }
+
+#master { width: 1020px; margin: 0 auto; border-left: 1px solid rgb(150,150,150); border-right: 1px solid rgb(150,150,150); }
+
+header { background: rgb(0,0,0); height: 60px; padding: 5px 40px 10px 40px; }
+	#logo { width: 200px; height: 50px; float: left; margin-top: 10px; }
+	.Menu { float: right; margin-top: 25px; font-weight: bold; }
+	.Menu li { float: left; list-style-type: none; margin-right: 30px; }
+	.Menu li a { text-decoration: none; color: rgb(255,255,255); }
+	.button { float: right; width: 150px; height: 38px; border-radius: 5px; padding: 7px 5px; margin: 5px 5px 0 0; border: 1px solid rgb(205,101,14); cursor: pointer; background: linear-gradient(rgb(245,143,61),rgb(205,101,15)); box-shadow: 0px 3px 12px rgba(0,0,0,.5),0px 2px 0px rgb(185,91,12),inset 0px 2px 0px rgba(255,255,255,.5); }
+	.button:hover { background: linear-gradient(rgb(205,101,15),rgb(245,143,61)); }
+
+#hero { height: 335px; background: url(http://localhost/images/DavidLeoVeksler.jpg); padding-top: 20px; padding-bottom: 35px; color: rgb(255,255,255); }
+	.HeroiPad { width: 460px; height: 360px; margin-left: 40px; float: left; }
+	.HeroText { width: 430px; height: 360px; float: right; margin-right: 20px; }
+	.HeroText h1 { font-size: 55px; font-family: 'Oleo Script Swash Caps', cursive; line-height: 1em; margin-bottom: 20px; text-shadow: 2px 2px 5px rgba(0,0,0,.5); }
+	.HeroText p { margin-bottom: 50px; }
+	.HeroText .button { width: 225px; height: 45px; float: left; font-size: 30px; padding-top: 15px; text-align: center; text-shadow: 0 -2px rgba(0,0,0,.25); }
+
+#introducing { height: 310px; text-align: center; padding-top: 20px; border-bottom: 1px solid rgb(150,150,150); }
+	#introducing h1 { font-size: 45px; font-family: 'Oleo Script Swash Caps', cursive; color: rgb(113,80,109); }
+	#introducing p { margin-bottom: 30px; color: rgb(180,180,180); }
+	#introducing h2 { font-size: 30px; font-family: 'Oleo Script Swash Caps', cursive; color: rgb(113,80,109); }
+	.IntroBox1 { float: left; width: 300px; height: 200px; margin-left: 40px; }
+	.IntroBox2 { float: left; width: 300px; height: 200px; margin-left: 20px; }
+	.IntroBox3 { float: left; width: 300px; height: 200px; margin-left: 20px; }
+
+#siteloop { padding-top: 20px; }
+	#siteloop article { padding-bottom: 30px; padding-left: 10px; padding-right: 10px; color: rgb(180,180,180); }
+	#siteloop article h2 a { text-decoration: none; font-size: 30px; color: rgb(113,80,109); font-family: 'Oleo Script Swash Caps', cursive; }
+	#siteloop .more-link { font-size: 15px; }
+	.navigation { margin-left: 5px; margin-bottom: 15px; }
+	
+#sidebar { float: right; width: 210px; padding-top: 10px; }	
+	h2.widgettitle { font-family: 'Oleo Script Swash Caps', cursive; color: rgb(113,80,109); font-size: 25px; }
+	.widget { margin-bottom: 20px; }
+
+#getitnow { background: rgb(113,80,109); height: 75px; padding: 10px 40px 0 40px; clear: both; }
+	#getitnow h1 { font-size: 45px; float: left; font-family: 'Oleo Script Swash Caps', cursive; color: rgb(255,255,255); }
+	#getitnow .button {  }
+
+footer { height: 40px; padding-top: 10px; text-align: center; font-size: 14px; }
+	footer li { list-style-type: none; margin-right: 30px; display: inline-block; }
+	footer li a { text-decoration: none; }
+
+/* ---------------------------------------------------------------------------------------------------------- 
+03 Media queries (using a mobile-first approach) ------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------- */
+
+/* 400 and up */
+@media screen and (min-width:400px) {
+
+					{ /* Place your styles here for all widths greater than 400px */ }
+
+}
+
+/* Retina Display */
+@media screen and (-webkit-min-device-pixel-ratio:2) {
+
+					{ /* Place your styles here for all 'Retina' screens */ }
+
+}
