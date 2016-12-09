@@ -28,6 +28,9 @@ All photo credits to Worn Leather Media. </p>
 	<div id="hero-btn">
 			<div class="button">Read More</div>
 	</div>
+	<div id="hero-shadow">
+		<img src="wp-content/themes/blanktheme/hero-shadow.png" />
+	</div>
 	<div id="hero-nav">
 		<?php 
 			for($nav = 1; $nav <= 4; $nav++) {
