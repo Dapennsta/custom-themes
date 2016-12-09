@@ -272,7 +272,8 @@ h2 {
 }
 
 .post {
-	
+	float: left;
+	width: 100%;
 }
 
 .post-imgFULLWIDTH {
@@ -290,6 +291,15 @@ h2 {
 .post-img img {
 	border-radius: 20px;
 	transform: translate(-20px,-20px);
+	position: relative;
+	z-index: 100;
+}
+
+.post-img-shad {
+	z-index: 50;
+	position: relative;
+	top: 28px;
+	right: 295px;
 }
 
 .post-text {
@@ -321,6 +331,10 @@ h2 {
 	height: 42px;
 	font-size: 20px;
 	line-height: 45px;
+	background: linear-gradient(#b2aca3,#767676); 
+}
+.post-btn .button:hover { 
+	background: linear-gradient(#767676,#b2aca3); 
 }
 
 

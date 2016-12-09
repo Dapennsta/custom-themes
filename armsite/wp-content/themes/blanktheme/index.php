@@ -78,7 +78,7 @@ All photo credits to Worn Leather Media. </p>
 						<?php if (has_post_thumbnail( $post -> ID ) ) : ?>
 							  	<?php echo wp_get_attachment_image( get_post_thumbnail_id( $post -> ID ), 'medium'); ?> 
 							 <?php else : ?> 
-								<img src="http://placehold.it/280x158">
+								<img src="http://placehold.it/300x300">
 						<?php endif; ?>
 					</div>
 					<div class="post-text">
@@ -86,6 +86,9 @@ All photo credits to Worn Leather Media. </p>
 					</div>
 					<div class="post-btn">
 						<div class="button">Read More</div>
+					</div>
+					<div class="post-img-shad">
+						<img src='wp-content/themes/blanktheme/thumb-shadow.png' />
 					</div>
 				</div>
 			</article>
