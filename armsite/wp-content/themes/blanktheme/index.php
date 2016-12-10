@@ -15,15 +15,24 @@
 ?>
 <?php Starkers_Utilities::get_template_parts( array( 'parts/shared/html-header', 'parts/shared/header' ) ); ?>
 	
+<?php 
+	$args = array (
+				'posts_per_page'	=> 4,
+				'category_name'		=> 'feat'	);
+	$feat_posts = get_posts( $args );
+
+	if (!empty($feat_posts)) :
+?>
+
 <div id="hero">
 	<div id="hero-img">
-		<img src="http://placehold.it/500x281" />
+		<?php echo wp_get_attachment_image( get_post_thumbnail_id( $feat_posts[3] -> ID ), array( '500', '500') ); ?>
+		<?php /** <img src="http://placehold.it/500x281" /> */ ?>
 	</div>
 	<div id="hero-text">
-		<?php /** REPLACE WITH WORDPRESS PULLS */ ?>
-		<h2>new: live shots from zaphods gig</h2>
-		<p>Check out these cool shots from our Aug. 17 gig at Zaphod Beeblebrox. 
-All photo credits to Worn Leather Media. </p>
+		<h2><?php echo $feat_posts[3] -> post_title ?></h2>
+		<p><?php echo wp_trim_words($feat_posts[3] -> post_content, 19, "..."); ?></p>
+				 
 	</div>
 	<div id="hero-btn">
 			<div class="button">Read More</div>
@@ -39,6 +48,8 @@ All photo credits to Worn Leather Media. </p>
 		?>
 	</div>
 </div>
+
+<?php endif; ?>
 
 <div class="banner"><h2>Come See Us Play Live</h2></div>
 

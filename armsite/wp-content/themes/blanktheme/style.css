@@ -142,14 +142,19 @@ h2 {
 #hero-img {
 	height: 281px;
 	width: 500px;
-	padding-top: 40px;
-	margin-left: 40px;
 	float: left;
+	top: 40px;
+	left: 40px;
 	border-radius: 20px;
 	position: relative;
 	z-index: 100;
+	overflow: hidden;
+
 }
-#hero-img img { border-radius: 20px; }
+#hero-img img {
+	 border-radius: 20px;
+	 transform: translate(0px, -20px); 
+}
 
 #hero-shadow {
 	position: absolute;
@@ -196,8 +201,9 @@ h2 {
 }
 /* TEMP */
 #hero-nav-1 {
-	background: #bc4c39;
+	background: #bc4c39 !important;
 }
+
 
 .banner {
 	width: 100%;
