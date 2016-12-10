@@ -151,9 +151,16 @@ h2 {
 	overflow: hidden;
 
 }
-#hero-img img {
+#hero-img .hero-images {
 	 border-radius: 20px;
 	 transform: translate(0px, -20px); 
+}
+
+.hero-images {
+	display: none;
+}
+.hero-img-sel {
+	display: block;
 }
 
 #hero-shadow {
@@ -180,6 +187,10 @@ h2 {
 	padding: 20px 0px;
 }
 
+#hero-info {
+	display: none;
+}
+
 #hero-btn { margin-right: 40px; }
 #hero-btn .button { background: linear-gradient(#ee3727,#bc4c39); }
 #hero-btn .button:hover { background: linear-gradient(#bc4c39,#ee3727); }
@@ -199,8 +210,7 @@ h2 {
 	margin-right: 60px;
 	float: left;
 }
-/* TEMP */
-#hero-nav-1 {
+.hero-nav-sel {
 	background: #bc4c39 !important;
 }
 

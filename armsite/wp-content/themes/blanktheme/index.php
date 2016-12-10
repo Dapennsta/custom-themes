@@ -21,17 +21,27 @@
 				'category_name'		=> 'feat'	);
 	$feat_posts = get_posts( $args );
 
-	if (!empty($feat_posts)) :
+	if ( !empty( $feat_posts ) ) :
 ?>
+<div id="hero-info">
+	<?php foreach ($feat_posts as $post)	{ ?>
+		<div class="hero-title"> <?php echo $post -> post_title; ?> </div>
+		<div class="hero-content"> <?php echo wp_trim_words($post -> post_content, 19, "..."); ?> </div>
+	<?php } ?>
+</div>
 
 <div id="hero">
 	<div id="hero-img">
-		<?php echo wp_get_attachment_image( get_post_thumbnail_id( $feat_posts[3] -> ID ), array( '500', '500') ); ?>
-		<?php /** <img src="http://placehold.it/500x281" /> */ ?>
+		<?php for ( $i=0; $i<4; $i++ ) {
+			if ( $i == 0 ) { echo '<div class="hero-images hero-img-sel" id="hero-img-'.$i.'">'; }
+			else { echo '<div class="hero-images" id="hero-img-'.$i.'">'; }
+			echo wp_get_attachment_image( get_post_thumbnail_id( $feat_posts[$i] -> ID ), array( '500', '500') );
+			echo '</div>';
+		} ?>
 	</div>
 	<div id="hero-text">
-		<h2><?php echo $feat_posts[3] -> post_title ?></h2>
-		<p><?php echo wp_trim_words($feat_posts[3] -> post_content, 19, "..."); ?></p>
+		<h2 id="hero-title"><?php echo $feat_posts[0] -> post_title ?></h2>
+		<p id="hero-content"><?php echo wp_trim_words($feat_posts[0] -> post_content, 19, "..."); ?></p>
 				 
 	</div>
 	<div id="hero-btn">
@@ -43,7 +53,11 @@
 	<div id="hero-nav">
 		<?php 
 			for($nav = 1; $nav <= 4; $nav++) {
-				echo '<div id="hero-nav-'.$nav.'"></div>';
+				if ($nav == 1) {
+					echo '<div class="hero-nav-sel hero-nav-box" id="hero-nav-'.$nav.'"></div>';
+				} else {
+					echo '<div class="hero-nav-box" id="hero-nav-'.$nav.'"></div>';
+				}
 			}
 		?>
 	</div>
