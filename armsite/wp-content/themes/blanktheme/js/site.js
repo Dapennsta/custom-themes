@@ -6,31 +6,29 @@ function mod(n, m) {
 jQuery(document).ready(function($) {
 
 	var heroIndex = 0;
+	var HERO_PAGES = 4;
 
-	var heroTimer = setInterval(function() {
+	function heroTimer(index) {
 
-		// Changes selected box
+		$('#hero-nav').children()[mod(heroIndex, HERO_PAGES)].setAttribute('class', 'hero-nav-box');
+		$('#hero-img').children()[mod(heroIndex, HERO_PAGES)].setAttribute('class', 'hero-images');
 
-		$('.hero-nav-box').removeClass('hero-nav-sel');
-		var elm = document.getElementById( 'hero-nav-' + (mod(heroIndex, 4) + 1).toString() );
-		elm.classList.add('hero-nav-sel');
+		// Use manual index or increment
+		if ((!index === 'undefined')) { heroIndex = index; }
+		else { heroIndex++; }
 
-		// Changes Image
-
-		$('.hero-images').removeClass('hero-img-sel');
-
-		var elm = document.getElementById( 'hero-img-' + (mod(heroIndex, 4).toString()) );
-		elm.classList.add('hero-img-sel');
+		$('#hero-nav').children()[mod(heroIndex, HERO_PAGES)].setAttribute('class', 'hero-nav-sel');
+		$('#hero-img').children()[mod(heroIndex, HERO_PAGES)].setAttribute('class', 'hero-img-sel');
 
 		// Change Title and Words to next element 
 
 		var titles = document.getElementsByClassName( 'hero-title' );
-		var elm = document.getElementById( 'hero-title' );
-		elm.innerHTML = titles[mod(heroIndex, 4)].innerHTML;
+		document.getElementById( 'hero-title' ).innerHTML = titles[mod(heroIndex, HERO_PAGES)].innerHTML;
 		var cont = document.getElementsByClassName( 'hero-content' );
-		var elm2 = document.getElementById( 'hero-content' );
-		elm2.innerHTML = cont[mod(heroIndex, 4)].innerHTML;
+		document.getElementById( 'hero-content' ).innerHTML = cont[mod(heroIndex, HERO_PAGES)].innerHTML;
+	}
 
-		heroIndex++;
-	}, 5000);	
+	var timer = setInterval(heroTimer, 5000);	
+
+	$('#hero-nav-1').click( function() { return heroTimer(0); } );
 });
