@@ -1,41 +1,36 @@
 
-	jQuery(document).ready(function($) {
+function mod(n, m) {
+	return ((n % m) + m ) % m;
+}
 
-		var mod = function(n, m) {
-			return ((n % m) + m ) % m;
-		}
+jQuery(document).ready(function($) {
 
-		var heroIndex = 1;
-		var heroTimer = function() {
-			heroBox();
-			heroImg();
-			heroText();
-			heroIndex++;
-		}
+	var heroIndex = 0;
 
-		var heroBox = function () {
-			$('.hero-nav-box').removeClass('hero-nav-sel');
+	var heroTimer = setInterval(function() {
 
-			var elm = document.getElementById( 'hero-nav-' + (mod(heroIndex, 4) + 1).toString() );
-			elm.classList.add('hero-nav-sel');
-		}
+		// Changes selected box
 
-		var heroImg = function () {
-			$('.hero-images').removeClass('hero-img-sel');
+		$('.hero-nav-box').removeClass('hero-nav-sel');
+		var elm = document.getElementById( 'hero-nav-' + (mod(heroIndex, 4) + 1).toString() );
+		elm.classList.add('hero-nav-sel');
 
-			var elm = document.getElementById( 'hero-img-' + (mod(heroIndex, 4).toString()) );
-			elm.classList.add('hero-img-sel');
-		}
+		// Changes Image
 
-		var heroText = function () {
-			var titles = document.getElementsByClassName( 'hero-title' );
-			var elm = document.getElementById( 'hero-title' );
-			elm.innerHTML = titles[mod(heroIndex, 4)].innerHTML;
-			var cont = document.getElementsByClassName( 'hero-content' );
-			var elm2 = document.getElementById( 'hero-content' );
-			elm2.innerHTML = cont[mod(heroIndex, 4)].innerHTML;
-		}
+		$('.hero-images').removeClass('hero-img-sel');
 
-		setInterval(heroTimer, 5000);
-	});
+		var elm = document.getElementById( 'hero-img-' + (mod(heroIndex, 4).toString()) );
+		elm.classList.add('hero-img-sel');
 
+		// Change Title and Words to next element 
+
+		var titles = document.getElementsByClassName( 'hero-title' );
+		var elm = document.getElementById( 'hero-title' );
+		elm.innerHTML = titles[mod(heroIndex, 4)].innerHTML;
+		var cont = document.getElementsByClassName( 'hero-content' );
+		var elm2 = document.getElementById( 'hero-content' );
+		elm2.innerHTML = cont[mod(heroIndex, 4)].innerHTML;
+
+		heroIndex++;
+	}, 5000);	
+});
