@@ -4,7 +4,7 @@
 	<!-- Logo linking back to home page -->
 	<a href="<?php echo home_url(); ?>">
 		<div id="logo">
-			<img src="http://placehold.it/510x160">
+			<img src="wp-content\themes\blanktheme\logo.png">
 		</div>
 	</a>
 

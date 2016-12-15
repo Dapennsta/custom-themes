@@ -15,13 +15,21 @@ jQuery(document).ready(function($) {
 
 	function heroTimer(index) {
 
+		$('#hero-img, #hero-text, #hero-shadow, #hero-btn').addClass('hero-slide');
+		$('#hero-img, #hero-text, #hero-shadow, #hero-btn').on('animationend', function() { $(this).removeClass('hero-slide'); });
+		setTimeout( function() {
+			return changeSlides(index);
+		}, 300);
+	}
+
+	function changeSlides(index) {
 		// ..remove current nav box and img 'selected' classes..
 		$('#hero-nav').children()[mod(heroIndex, HERO_PAGES)].setAttribute('class', 'hero-nav-box');
 		$('#hero-img').children()[mod(heroIndex, HERO_PAGES)].setAttribute('class', 'hero-images');
 
 		// ..use manual index or increment..
-		if (heroTimer.arguments.length == 1) { heroIndex = index; }
-		else { heroIndex++; }
+		if ( index === undefined ) { heroIndex++; }
+		else { heroIndex = index; }
 		
 		// ..change nav box and img to new index..
 		$('#hero-nav').children()[mod(heroIndex, HERO_PAGES)].setAttribute('class', 'hero-nav-sel');

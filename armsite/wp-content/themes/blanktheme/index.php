@@ -31,6 +31,7 @@
 </div>
 
 <div id="hero">
+	<div id="herobg"></div>
 	<div id="hero-img">
 		<?php for ( $i=0; $i<4; $i++ ) {
 			if ( $i == 0 ) { echo '<div class="hero-images hero-img-sel" id="hero-img-'.$i.'">'; }
@@ -91,7 +92,7 @@
 
 <div id="posts">
 	<?php if ( have_posts() ): ?>
-	<div class="title"><h3>News</h3></div>	
+	<div class="title"><h3>NEWS</h3></div>	
 	<ol>
 	<?php while ( have_posts() ) : the_post(); ?>
 		<li>
