@@ -137,6 +137,7 @@ h2 {
 	height: 380px;
 	padding-top: 20px;
 	box-shadow: inset 0px 0px 20px rgba(0,0,0,0.5);
+	perspective: 600px;
 
 }
 #herobg {
@@ -180,6 +181,7 @@ h2 {
 	z-index: 100;
 	overflow: hidden;
 	box-shadow: 0px 0px 10px rgb(0,0,0);
+	transform: rotateY(20deg);
 }
 #hero-img .hero-images {
 	 border-radius: 20px;
@@ -196,8 +198,9 @@ h2 {
 #hero-shadow {
 	position: absolute;
 	top: 240px;
-	left: 5px;
+	margin-left: -20px;
 	z-index: 50;
+	transform: rotateY(10deg);
 }
 
 #hero-text {
@@ -271,6 +274,7 @@ h2 {
 	padding-top: 25px;
 	color: #fff;
 	clear: both;
+	background: url(gigsbg.png);
 }
 
 #gig-next {
@@ -303,6 +307,99 @@ h2 {
 #gig-btn .button { background: linear-gradient(#f7941d,#995e17); }
 #gig-btn .button:hover { background: linear-gradient(#995e17,#f7941d); }
 
+#media {
+	display: inline-block;
+	width: 100%;
+	height: 30px;
+	background: #767676;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 20px;
+	line-height: 30px;
+	margin-bottom: -5px;
+}
+#media span {
+	float: left;
+	width: 50%;
+}
+#media span:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#media-box {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 620px;
+	background: #767676;
+	padding-top: 20px;
+}
+
+iframe {
+	transition: all 0.5s;
+}
+
+.media-bg {
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	z-index: 5;
+	position: absolute;
+	transition: background 0.3s;
+}
+
+.media-video {	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-basis: auto;
+	width: 200px;
+	height: 113px;
+	transition: all 1s;
+	float: left;
+}
+.media-video p {
+	z-index: 10;
+	text-align: center;
+	color: #fff;
+	background: rgba(120,120,120,0.6);
+	padding: 10px;
+	border-radius: 2px;
+	position: absolute;
+}
+.media-video p:hover {
+	text-decoration: underline;
+	cursor: pointer;
+	background: rgba(120,120,120,0.8);
+}
+.media-video p:hover + .media-bg {
+	background: rgba(0,0,0,0.8);
+}
+iframe.isPlaying {
+	width: 850px;
+	height: 478px;
+	opacity: 1;
+}
+
+
+
+.arrow-down-sm {
+	width: 0;
+	height: 0;
+	float: left;
+	left: 85%;
+	top: 10px;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid #fff;
+}
+
+
+
 #posts {
 	width: 100%;
 	background: #dbd2c3;
@@ -324,7 +421,7 @@ h2 {
 .title-bar{
 	width: 100%;
 	height: 36px;
-	background: #767676;
+	background: #f7941d;
 	float: left;
 }
 .title-bar a {

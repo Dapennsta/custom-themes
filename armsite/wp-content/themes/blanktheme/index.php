@@ -88,7 +88,33 @@
 	</div>
 </div>
 
-<div class="banner"></div>
+<?php //<div class="banner"><span>Check Out Our Latest Video</span></div> ?>
+<div id="media">
+	<span>Check out our latest videos<div class="arrow-down-sm"></div></span>
+	<span>Check out our latest music<div class="arrow-down-sm"></div></span>
+</div>
+<div id="media-box">
+	<div class="media-video">
+		<p>WAKE UP</p><span class="media-bg"></span>
+		<iframe id="player1" class="ytplayer" width="100%" height="100%" 
+		src="https://www.youtube.com/embed/n679wI_P160?enablejsapi=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+	</div>
+	<div class="media-video">
+		<p>All UP TO YOU</p><span class="media-bg"></span>
+		<iframe id="player2" class="ytplayer" width="100%" height="100%"
+		src="https://www.youtube.com/embed/aBP2CPV8wlI?enablejsapi=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+	</div>
+	<div class="media-video">
+		<p>FIRST OVERALL</p><span class="media-bg"></span>
+		<iframe id="player3" class="ytplayer" width="100%" height="100%" 
+		src="https://www.youtube.com/embed/6A67AD4gl8Y?enablejsapi=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+	</div>
+	<div class="media-video">
+		<p>MUTINY</p><span class="media-bg"></span>
+		<iframe id="player4" class="ytplayer" width="100%" height="100%" 
+		src="https://www.youtube.com/embed/QTh25hmf4GU?enablejsapi=1&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+	</div>
+</div>
 
 <div id="posts">
 	<?php if ( have_posts() ): ?>
